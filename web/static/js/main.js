@@ -142,13 +142,13 @@ function initMap() {
   L.control.layers(
     { OpenStreetMap: base },
     {
-      "观察格网范围示意": state.layers.coverageAreas,
+      "路线观察范围": state.layers.coverageAreas,
       "研学观察顺序": state.layers.routeLines,
       "研学观察节点": state.layers.routeStops,
       "选用观察窗口": state.layers.segments,
       "JSD 移动窗口": state.layers.windows,
       "秦岭参考线": state.layers.boundary,
-      "20km观察格网": state.layers.points,
+      "村镇地名点": state.layers.points,
     },
     { collapsed: false }
   ).addTo(map);
@@ -162,6 +162,7 @@ function initMap() {
 
 function fitAll() {
   const layers = [
+    ...state.layers.points.getLayers(),
     ...state.layers.routeLines.getLayers(),
     ...state.layers.coverageAreas.getLayers(),
     ...state.layers.routeStops.getLayers(),
@@ -175,12 +176,12 @@ function fitAll() {
 
 function renderLegend() {
   const items = [
-    ["观察格网范围示意", "rgba(152,45,57,0.22)", "line"],
+    ["路线观察范围", "rgba(152,45,57,0.22)", "line"],
     ["研学观察顺序", "#982d39", "line"],
     ["选用观察窗口", "#f2b84b", "line"],
     ["秦岭线", "#18364d", "line"],
-    ["A侧20km格网", "#1e5d86", "dot"],
-    ["B侧20km格网", "#bd7b25", "dot"],
+    ["A侧地名点（" + state.plan.selection_evidence.point_display.A.toLocaleString() + "）", "#1e5d86", "dot"],
+    ["B侧地名点（" + state.plan.selection_evidence.point_display.B.toLocaleString() + "）", "#bd7b25", "dot"],
     ["沿线资料核查节点", "#982d39", "dot"],
   ];
   document.getElementById("legend").innerHTML = items.map(([label, color, type]) => `
@@ -279,7 +280,7 @@ function renderStopPanel(stops) {
       <div class="stop-card">
         <strong>${escapeHtml(p.stop_id)} ${escapeHtml(p.title)}</strong>
         <p>${escapeHtml(p.route_task || "")}</p>
-        <p>观察对象：${escapeHtml(p.n_sources ? "20km格网 · " + p.n_sources + "条来源" : "参考线资料核查节点")}；社区：${escapeHtml(p.top_community || "待现场核查")}；语义类型：待人工核验</p>
+        <p>地名：${escapeHtml(p.raw_name || "参考线资料核查节点")}；社区：${escapeHtml(p.community_id || p.top_community || "待现场核查")}；语义类型：待人工核验</p>
       </div>
     `;
   }).join("");
@@ -372,12 +373,12 @@ function bindStopPopup(feature, layer) {
     <div class="popup">
       <strong>${escapeHtml(p.stop_id)} ${escapeHtml(p.title)}</strong>
       <div>${escapeHtml(p.route_task || "")}</div>
-      <div>观察对象：${escapeHtml(p.n_sources ? "20km格网 · " + p.n_sources + "条来源" : "参考线资料核查节点")}</div>
-      <div>窗口特征：${escapeHtml(p.top_features || "资料待核查")}</div>
-      <div>数据口径：C 主方案有效来源</div>
-      <div>位置性质：公开聚合格网或参考线节点</div>
+      <div>地名：${escapeHtml(p.raw_name || "参考线资料核查节点")}</div>
+      <div>地名主体：${escapeHtml(p.name_body || "资料待核查")}</div>
+      <div>特征字：${escapeHtml(p.features || "资料待核查")}</div>
+      <div>位置：具体地名原始坐标或参考线节点</div>
       <div>语义类型：待人工核验</div>
-      <div>社区：${escapeHtml(p.top_community || "待现场核查")}</div>
+      <div>社区：${escapeHtml(p.community_id || p.top_community || "待现场核查")}</div>
     </div>
   `);
 }
@@ -424,13 +425,14 @@ function bindPointPopup(feature, layer) {
   const p = feature.properties || {};
   layer.bindPopup(`
     <div class="popup">
-      <strong>${escapeHtml(p.side)}侧20km观察格网</strong>
-      <div>来源数：${escapeHtml(p.n_sources)}</div>
-      <div>主要社区：${escapeHtml(p.top_community)}</div>
-      <div>社区质量比例：${formatPercent(p.top_share)}</div>
+      <strong>${escapeHtml(p.raw_name)}</strong>
+      <div>完整地名：${escapeHtml(p.full_name)}</div>
+      <div>地名主体：${escapeHtml(p.name_body)}</div>
       <div>实际特征字：${escapeHtml(p.features)}</div>
-      <div>对应窗口：${escapeHtml(p.window_id)}</div>
-      <div>公开格网中心，不是村庄点位。</div>
+      <div>社区质量：${p.community_memberships.map(g => escapeHtml(g.community_id) + " " + formatPercent(g.mass)).join("；")}</div>
+      <div>语义状态：${escapeHtml(p.semantic_status)}</div>
+      <div>side：${escapeHtml(p.side)}；所属可靠窗口：${p.window_ids.length}个</div>
+      <div>位置：该地名来源记录的原始坐标。</div>
     </div>
   `);
 }

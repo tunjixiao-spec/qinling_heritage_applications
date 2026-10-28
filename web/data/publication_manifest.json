@@ -1,5 +1,5 @@
 {
-  "version": "qinling-heritage-application-2026-10-28-v1",
+  "version": "qinling-heritage-application-2026-10-28-v2-source-points",
   "source_results_commit": "a142072f2a41f09803e4bcf4761f2569d92b07c5",
   "reference_interface_commit": "bbf5be625b76d42892b36f7f641e42e321c50740",
   "files": [
@@ -15,18 +15,18 @@
     },
     {
       "path": "data/points.geojson",
-      "bytes": 28062,
-      "sha256": "f61f9338bd9da6aecd0b7e11f66b8d53638453e958d07645431c0457911ed4e5"
+      "bytes": 5795195,
+      "sha256": "913a5c921daf122da393f53697c60d5f6e24d649137f8f1b71f5bca4e2275c4d"
     },
     {
       "path": "data/route.geojson",
-      "bytes": 6819,
-      "sha256": "a286ef55c6c5b535f35f5760e5fb97b86793cd16080ae82ec23757dcf8271937"
+      "bytes": 5954,
+      "sha256": "4796f8fffec81aac1ba95e0700eaeb8bff11411846ba29f18877887ff8b85a88"
     },
     {
       "path": "data/route_plan.json",
-      "bytes": 15584,
-      "sha256": "cbec7b578f611eba2de84c6630ebe646866a3920c3001bd8128d31738bc73299"
+      "bytes": 10918,
+      "sha256": "7d00465d9b1597071e65bf3d76c3a37b3c9d5141d223a6ba2643ef8c8f9415ba"
     },
     {
       "path": "data/segments.geojson",
@@ -40,8 +40,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 3209,
-      "sha256": "490839b1b6f380db58ed5494c874ae284082a3ffa6c9f04835425a1a8255022d"
+      "bytes": 3265,
+      "sha256": "3071a497dbfc5d1fd8ddf58201c37d46d37430c2c1ac0eb49d86c84775397fe8"
     },
     {
       "path": "static/css/style.css",
@@ -50,8 +50,8 @@
     },
     {
       "path": "static/js/main.js",
-      "bytes": 17030,
-      "sha256": "a0d2432d93acf8533338c5a7b12457b1e26f547131b6671288cf2381b70cc8fa"
+      "bytes": 17315,
+      "sha256": "62f397c700ce7093c5f0eb72d48b7f41a3b93879313e610898cba135d496b23a"
     },
     {
       "path": "static/vendor/leaflet/leaflet.css",
