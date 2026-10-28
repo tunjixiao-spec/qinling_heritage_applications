@@ -20,8 +20,8 @@
     },
     {
       "path": "data/route.geojson",
-      "bytes": 6679,
-      "sha256": "76633d4a48bdb78562ace6458ca9bfa93fc563ca4552ca5ce8344b7756557e29"
+      "bytes": 6819,
+      "sha256": "a286ef55c6c5b535f35f5760e5fb97b86793cd16080ae82ec23757dcf8271937"
     },
     {
       "path": "data/route_plan.json",
@@ -30,8 +30,8 @@
     },
     {
       "path": "data/segments.geojson",
-      "bytes": 1369,
-      "sha256": "2781dbedb0de2e4abce3dd83c51cab448c19f439db97542d436b2c0488ba0fc2"
+      "bytes": 1517,
+      "sha256": "09e9cbe1e3b336c35cce75fee82fdb601d4afe35660941012c35d268d36c303a"
     },
     {
       "path": "data/windows.geojson",
@@ -50,8 +50,8 @@
     },
     {
       "path": "static/js/main.js",
-      "bytes": 11254,
-      "sha256": "6afe216165ae207d1f9eeead4d1c0b02d3cc2a467c40b9f427fcbb8971f0a924"
+      "bytes": 17030,
+      "sha256": "a0d2432d93acf8533338c5a7b12457b1e26f547131b6671288cf2381b70cc8fa"
     },
     {
       "path": "static/vendor/leaflet/leaflet.css",

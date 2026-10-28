@@ -29,6 +29,8 @@
         "start_km": 430.0,
         "end_km": 530.0,
         "local_JSD": 0.0473421594020824,
+        "dominant_A_mode": "L0002",
+        "dominant_B_mode": "L0004",
         "geometry_role": "selected_window_not_significant_segment"
       }
     },
@@ -60,6 +62,8 @@
         "start_km": 230.0,
         "end_km": 330.0,
         "local_JSD": 0.0010842900205161,
+        "dominant_A_mode": "L0002",
+        "dominant_B_mode": "L0002",
         "geometry_role": "selected_window_not_significant_segment"
       }
     }

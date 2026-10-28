@@ -20,7 +20,8 @@
         "route_task": "对照社区比例与命中特征，回查地名原文、读音、旧名及其出处。",
         "n_sources": 233,
         "top_features": "家、西、寨、东",
-        "coordinate_role": "aggregate_cell_center"
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002"
       }
     },
     {
@@ -61,7 +62,8 @@
         "route_task": "对照社区比例与命中特征，回查地名原文、读音、旧名及其出处。",
         "n_sources": 12,
         "top_features": "坪、沟、河、坝",
-        "coordinate_role": "aggregate_cell_center"
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002"
       }
     },
     {
@@ -148,7 +150,8 @@
         "route_task": "对照社区比例与命中特征，回查地名原文、读音、旧名及其出处。",
         "n_sources": 182,
         "top_features": "家、湾、山、庄",
-        "coordinate_role": "aggregate_cell_center"
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002"
       }
     },
     {
@@ -189,7 +192,8 @@
         "route_task": "对照社区比例与命中特征，回查地名原文、读音、旧名及其出处。",
         "n_sources": 52,
         "top_features": "家、沟、庄、山",
-        "coordinate_role": "aggregate_cell_center"
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002"
       }
     },
     {

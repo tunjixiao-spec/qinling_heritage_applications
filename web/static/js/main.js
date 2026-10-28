@@ -1,88 +1,461 @@
-'use strict';
-const DATA_FILES={plan:'./data/route_plan.json',route:'./data/route.geojson',boundary:'./data/boundary.geojson',windows:'./data/windows.geojson',segments:'./data/segments.geojson',points:'./data/points.geojson'};
-const state={map:null,layers:{},miniMaps:[]};
-const formatNumber=(v,d=4)=>v==null||!Number.isFinite(Number(v))?'NA':Number(v).toFixed(d);
-const formatPercent=v=>v==null||!Number.isFinite(Number(v))?'NA':(Number(v)*100).toFixed(1)+'%';
-const escapeHtml=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#39;");
-async function fetchJson(path){const r=await fetch(path);if(!r.ok)throw Error('Input unavailable: '+path);return r.json()}
-async function init(){
- try{
-  const keys=Object.keys(DATA_FILES),values=await Promise.all(keys.map(k=>fetchJson(DATA_FILES[k])));keys.forEach((k,i)=>state[k]=values[i]);
-  renderOverview();renderRouteSections();renderSources();renderCommunityMatrix();renderScript();initMap();
-  document.body.dataset.ready='true';
- }catch(error){console.error(error);document.querySelector('.lead-panel').innerHTML='<div><h2>成果数据暂未读取成功</h2><p>请稍后刷新页面重试。</p></div>'}
-}
-function renderOverview(){
- document.getElementById('planningPrinciple').textContent=state.plan.planning_principle;
- const e=state.plan.selection_evidence,items=['C 山脉JSD '+formatNumber(e.C_mountain_JSD),'CB 山脉JSD '+formatNumber(e.CB_mountain_JSD),'可靠窗口 '+e.n_reliable_windows+'/'+e.n_windows,'可靠覆盖 '+formatPercent(e.reliable_coverage_ratio),'每侧宽度 '+state.plan.primary_side_width_km+'km'];
- document.getElementById('evidenceChips').innerHTML=items.map(s=>'<span class="chip">'+escapeHtml(s)+'</span>').join('');
-}
-function bindPopup(feature,layer){
- const p=feature.properties||{};let title=p.title||'秦岭成果',lines=[];
- if(p.stop_id){title=p.stop_id+' '+p.title;lines=[p.route_task,p.n_sources?'观察格网：'+p.n_sources+'条来源':'参考线上的资料核查节点',p.top_features?'当前窗口特征：'+p.top_features:'具体地形、古道和参访位置待核查']}
- else if(p.coordinate_role==='aggregate_cell_center'){title=p.side+'侧20km观察格网';lines=['对应窗口 '+p.window_id,p.n_sources+'条有效来源','主要社区 '+p.top_community+' · '+formatPercent(p.top_share),'格网内命中：'+p.features,'格网中心表示聚合位置，不是村庄点位。']}
- else if(p.geometry_role==='observation_sequence_not_road'){lines=['对应窗口 '+p.window_id,'参考里程 '+formatNumber(p.start_km,0)+'—'+formatNumber(p.end_km,0)+'km','C 窗口JSD '+formatNumber(p.local_JSD),'连线表示观察顺序，不表示道路。']}
- else if(p.window_id!=null){title=(p.geometry_role==='selected_window_not_significant_segment'?'选用观察窗口 #':'移动窗口 #')+p.window_id;lines=['参考里程 '+formatNumber(p.start_km,0)+'—'+formatNumber(p.end_km,0)+'km','C 窗口JSD '+formatNumber(p.local_JSD),p.reliable_window===false?'NA：未达到当前几何或来源资格':'观察资格以冻结窗口记录为准']}
- else if(p.geometry_role==='bounding_box_of_displayed_cells_not_sample_support_polygon'){lines=['公开格网的包围范围示意，不代表完整抽样支持区域。']}
- layer.bindPopup('<div class="popup"><strong>'+escapeHtml(title)+'</strong>'+lines.filter(Boolean).map(s=>'<div>'+escapeHtml(s)+'</div>').join('')+'</div>');
-}
-function baseMap(id,mini=false){
- const map=L.map(id,{preferCanvas:true,zoomControl:!mini,attributionControl:!mini,scrollWheelZoom:!mini}).setView([34,107],7);
- L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
- return map;
-}
-const pick=features=>({type:'FeatureCollection',features});
-function geo(data,options={}){return L.geoJSON(data,{onEachFeature:bindPopup,...options})}
-function pointStyle(feature){return {radius:3.7,color:'#fff',weight:.6,fillColor:feature.properties.side==='A'?'#1e5d86':'#bd7b25',fillOpacity:.65}}
-function stopStyle(feature){return {radius:feature.properties.stop_type==='沿线解释节点'?8:6.5,color:'#fff',weight:2,fillColor:feature.properties.stop_type==='沿线解释节点'?'#982d39':feature.properties.side==='A'?'#1e5d86':'#bd7b25',fillOpacity:.96}}
-function initMap(){
- const map=baseMap('map');state.map=map;
- state.layers.windows=geo(state.windows,{style:f=>({color:f.properties.reliable_window?'#d0a049':'#b8c8d6',weight:f.properties.reliable_window?4:2,opacity:f.properties.reliable_window?.4:.22})}).addTo(map);
- state.layers.segments=geo(state.segments,{style:{color:'#f2b84b',weight:9,opacity:.9,lineCap:'round'}}).addTo(map);
- state.layers.boundary=geo(state.boundary,{style:{color:'#18364d',weight:3,opacity:.82,dashArray:'8 5'}}).addTo(map);
- state.layers.points=geo(state.points,{pointToLayer:(f,c)=>L.circleMarker(c,pointStyle(f))}).addTo(map);
- state.layers.coverageAreas=geo(pick(state.route.features.filter(f=>f.geometry.type==='Polygon')),{style:{color:'#982d39',weight:1.4,opacity:.8,fillColor:'#982d39',fillOpacity:.06}}).addTo(map);
- state.layers.routeLines=geo(pick(state.route.features.filter(f=>f.geometry.type==='LineString')),{style:{color:'#982d39',weight:6,opacity:.95,lineCap:'round'}}).addTo(map);
- state.layers.routeStops=geo(pick(state.route.features.filter(f=>f.geometry.type==='Point')),{pointToLayer:(f,c)=>L.circleMarker(c,stopStyle(f))}).addTo(map);
- L.control.layers({}, {'观察格网范围示意':state.layers.coverageAreas,'研学观察顺序':state.layers.routeLines,'研学观察节点':state.layers.routeStops,'选用观察窗口':state.layers.segments,'全部34个移动窗口':state.layers.windows,'秦岭参考线':state.layers.boundary,'两侧20km观察格网':state.layers.points},{collapsed:false}).addTo(map);
- renderStopPanel();renderLegend();renderMiniRouteMaps();
- const bounds=state.layers.boundary.getBounds();if(bounds.isValid())map.fitBounds(bounds.pad(.15));
-}
-function renderLegend(){
- const items=[['格网范围示意','rgba(152,45,57,.22)','line'],['观察顺序','#982d39','line'],['选用窗口','#f2b84b','line'],['秦岭参考线','#18364d','line'],['A侧20km格网','#1e5d86','dot'],['B侧20km格网','#bd7b25','dot'],['沿线资料核查节点','#982d39','dot']];
- document.getElementById('legend').innerHTML=items.map(([s,c,t])=>'<span class="legend-item"><span class="'+(t==='dot'?'swatch-dot':'swatch-line')+'" style="background:'+c+'"></span>'+escapeHtml(s)+'</span>').join('');
-}
-function renderStopPanel(){
- document.getElementById('stopPanel').innerHTML=state.route.features.filter(f=>f.geometry.type==='Point').map(f=>{const p=f.properties;return '<div class="stop-card"><strong>'+escapeHtml(p.stop_id+' '+p.title)+'</strong><p>'+escapeHtml(p.route_task)+'</p><p>'+escapeHtml(p.n_sources?'20km格网：'+p.n_sources+'条有效来源；当前窗口特征：'+p.top_features:'在冻结参考线上组织资料核查，具体参访位置待确认。')+'</p></div>'}).join('');
-}
-function renderRouteSections(){
- document.getElementById('routeSections').innerHTML=state.plan.route_sections.map(s=>`
- <div class="route-card route-story-card"><div class="route-story-map" id="routeMiniMap-${s.section_no}"></div><div class="route-story-content">
- <div class="route-kicker">Route ${s.section_no} · ${escapeHtml(s.coverage_label)}</div><h3>${escapeHtml(s.title)}</h3><p class="route-subtitle">${escapeHtml(s.subtitle)}</p>
- <div class="route-stats"><span>窗口 ${s.window_id}</span><span>C JSD ${formatNumber(s.local_JSD)}</span><span>CB JSD ${formatNumber(s.CB_local_JSD)}</span><span>A/B 来源 ${s.n_effective_A} / ${s.n_effective_B}</span></div>
- <p class="route-value">${escapeHtml(s.route_value)}</p><div class="route-story-columns"><div><strong>文化遗址与资料线索</strong><ul class="task-list">${s.heritage_sites.map(t=>'<li><b>'+escapeHtml(t.name)+'</b>：'+escapeHtml(t.site_type)+'。'+escapeHtml(t.description)+'</li>').join('')}</ul></div><div><strong>研学项目设计</strong><ul class="task-list">${s.route_projects.map(t=>'<li>'+escapeHtml(t)+'</li>').join('')}</ul></div></div>
- <p>50种子范围：${formatNumber(s.seed_min_JSD)}—${formatNumber(s.seed_max_JSD)}；属于算法变化范围。</p><p><a href="${escapeHtml(s.full_result_url)}" target="_blank" rel="noopener">查看此窗口的完整成果 ↗</a></p>
- </div></div>`).join('');
-}
-function renderMiniRouteMaps(){
- for(const s of state.plan.route_sections){
-  const mini=baseMap('routeMiniMap-'+s.section_no,true),items=state.route.features.filter(f=>f.properties.section_no===s.section_no),layers=[];
-  const area=geo(pick(items.filter(f=>f.geometry.type==='Polygon')),{style:{color:'#982d39',weight:1.2,opacity:.75,fillOpacity:.07}}).addTo(mini);layers.push(area);
-  geo(pick(state.segments.features.filter(f=>f.properties.window_id===s.window_id)),{style:{color:'#f2b84b',weight:8,opacity:.8}}).addTo(mini);
-  geo(pick(state.points.features.filter(f=>f.properties.section_no===s.section_no)),{pointToLayer:(f,c)=>L.circleMarker(c,pointStyle(f))}).addTo(mini);
-  geo(pick(items.filter(f=>f.geometry.type==='LineString')),{style:{color:'#982d39',weight:5,opacity:.95}}).addTo(mini);
-  const stops=geo(pick(items.filter(f=>f.geometry.type==='Point')),{pointToLayer:(f,c)=>L.circleMarker(c,stopStyle(f))}).addTo(mini);layers.push(stops);
-  const bounds=L.featureGroup(layers).getBounds();if(bounds.isValid())mini.fitBounds(bounds.pad(.15));
-  state.miniMaps.push(mini);
- }
-}
-function renderSources(){
- document.getElementById('sourceCards').innerHTML=state.plan.cultural_sources.map(s=>'<div class="source-card"><strong>'+escapeHtml(s.title)+'</strong><p>'+escapeHtml(s.summary)+'</p><p>路线用途：'+escapeHtml(s.route_use)+'</p><p><a href="'+escapeHtml(s.url)+'" target="_blank" rel="noopener">查看资料来源</a></p></div>').join('');
-}
-function renderTags(items,counts=false){return '<span class="tag-list">'+items.slice(0,6).map(x=>'<span class="tag">'+escapeHtml(x.name)+' '+formatPercent(x.share)+(counts?'（'+x.count+'）':'')+'</span>').join('')+'</span>'}
-function renderCommunityMatrix(){
- document.getElementById('communityMatrix').innerHTML=state.plan.route_sections.map(s=>'<div class="community-card"><div><strong>'+escapeHtml(s.title)+'</strong><p>C 窗口JSD：'+formatNumber(s.local_JSD)+'；CB：'+formatNumber(s.CB_local_JSD)+'</p><p>窗口 '+s.window_id+'，参考里程 '+formatNumber(s.station_range[0],0)+'—'+formatNumber(s.station_range[1],0)+'km。</p></div>'+['A','B'].map(side=>{const d=s.side_summaries[side];return '<div class="community-side"><strong>'+escapeHtml(d.side_label)+'</strong><p>有效来源：'+d.n_sources+'条；显示格网：'+d.n_cells+'个。</p><p>主要社区质量比例：'+renderTags(d.top_communities)+'</p><p>实际特征字来源命中率：'+renderTags(d.top_features,true)+'</p><p>语义类型：'+escapeHtml(d.semantic_status)+'。</p><p>格网未单列来源：'+d.suppressed_sources+'条，仍计入窗口统计。</p></div>'}).join('')+'</div>').join('');
-}
-function renderScript(){document.getElementById('scriptBox').innerHTML=state.plan.script_paragraphs.map(p=>'<p>'+escapeHtml(p)+'</p>').join('')}
-init();
+const DATA_FILES = {
+  plan: "./data/route_plan.json",
+  route: "./data/route.geojson",
+  boundary: "./data/boundary.geojson",
+  windows: "./data/windows.geojson",
+  segments: "./data/segments.geojson",
+  points: "./data/points.geojson",
+};
 
+const state = {
+  plan: null,
+  route: null,
+  boundary: null,
+  windows: null,
+  segments: null,
+  points: null,
+  map: null,
+  layers: {},
+};
+
+async function fetchJson(path) {
+  const response = await fetch(path, { cache: "no-store" });
+  if (!response.ok) throw new Error(`${path} 读取失败：HTTP ${response.status}`);
+  return response.json();
+}
+
+async function init() {
+  try {
+    const [plan, route, boundary, windows, segments, points] = await Promise.all([
+      fetchJson(DATA_FILES.plan),
+      fetchJson(DATA_FILES.route),
+      fetchJson(DATA_FILES.boundary),
+      fetchJson(DATA_FILES.windows),
+      fetchJson(DATA_FILES.segments),
+      fetchJson(DATA_FILES.points),
+    ]);
+    Object.assign(state, { plan, route, boundary, windows, segments, points });
+    renderOverview();
+    renderRouteSections();
+    renderSources();
+    renderCommunityMatrix();
+    renderScript();
+    initMap();
+    document.body.dataset.ready = "true";
+  } catch (error) {
+    document.body.innerHTML = `<main class="app-shell"><section class="panel"><h1>路线数据读取失败</h1><p>${escapeHtml(error.message)}</p><p>请确认 data/route_plan.json、route.geojson 与相关 GeoJSON 已上传。</p></section></main>`;
+  }
+}
+
+function renderOverview() {
+  document.getElementById("planningPrinciple").textContent = state.plan.planning_principle;
+  const evidence = state.plan.selection_evidence || {};
+  const chips = [
+    `秦岭 mountain_JSD ${formatNumber(evidence.C_mountain_JSD)}`,
+    `CB mountain_JSD ${formatNumber(evidence.CB_mountain_JSD)}`,
+    `可靠覆盖 ${formatPercent(evidence.reliable_coverage_ratio)}`,
+    `可靠窗口 ${evidence.n_reliable_windows}/${evidence.n_windows}`,
+    `选用窗口 ${evidence.selected_windows.length} 个`,
+  ];
+  document.getElementById("evidenceChips").innerHTML = chips.map(text => `<span class="chip">${escapeHtml(text)}</span>`).join("");
+}
+
+function initMap() {
+  const map = L.map("map", { preferCanvas: true }).setView([34, 107], 7);
+  const base = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: '&copy; OpenStreetMap',
+  }).addTo(map);
+
+  state.layers.windows = L.geoJSON(state.windows, {
+    style: feature => ({
+      color: feature.properties?.reliable_window ? "#d0a049" : "#b8c8d6",
+      weight: feature.properties?.reliable_window ? 5 : 3,
+      opacity: feature.properties?.reliable_window ? 0.68 : 0.22,
+      lineCap: "round",
+    }),
+    onEachFeature: bindWindowPopup,
+  }).addTo(map);
+
+  state.layers.segments = L.geoJSON(state.segments, {
+    style: { color: "#f2b84b", weight: 9, opacity: 0.90, lineCap: "round" },
+    onEachFeature: bindSegmentPopup,
+  }).addTo(map);
+
+  state.layers.boundary = L.geoJSON(state.boundary, {
+    style: { color: "#18364d", weight: 3, opacity: 0.82, dashArray: "8 5" },
+  }).addTo(map);
+
+  state.layers.points = L.geoJSON(state.points, {
+    pointToLayer: (feature, latlng) => {
+      const side = feature.properties?.side;
+      return L.circleMarker(latlng, {
+        radius: 3.7,
+        color: "#fff",
+        weight: 0.6,
+        fillColor: side === "A" ? "#1e5d86" : side === "B" ? "#bd7b25" : "#8ba0b2",
+        fillOpacity: 0.58,
+      });
+    },
+    onEachFeature: bindPointPopup,
+  }).addTo(map);
+
+  const coverageAreas = {
+    type: "FeatureCollection",
+    features: state.route.features.filter(feature => feature.geometry?.type === "Polygon"),
+  };
+  const routeLines = {
+    type: "FeatureCollection",
+    features: state.route.features.filter(feature => feature.geometry?.type === "LineString"),
+  };
+  const routeStops = {
+    type: "FeatureCollection",
+    features: state.route.features.filter(feature => feature.geometry?.type === "Point"),
+  };
+
+  state.layers.coverageAreas = L.geoJSON(coverageAreas, {
+    style: { color: "#982d39", weight: 1.4, opacity: 0.8, fillColor: "#982d39", fillOpacity: 0.08 },
+  }).addTo(map);
+
+  state.layers.routeLines = L.geoJSON(routeLines, {
+    style: { color: "#982d39", weight: 6, opacity: 0.95, lineCap: "round" },
+    onEachFeature: bindRouteLinePopup,
+  }).addTo(map);
+
+  state.layers.routeStops = L.geoJSON(routeStops, {
+    pointToLayer: (feature, latlng) => {
+      const type = feature.properties?.stop_type;
+      const color = type === "沿线解释节点" ? "#982d39"
+        : type === "文化遗址/古道资料点" ? "#2c7a62"
+        : feature.properties?.side === "A" ? "#1e5d86" : "#bd7b25";
+      return L.circleMarker(latlng, {
+        radius: type === "沿线解释节点" ? 8 : type === "文化遗址/古道资料点" ? 7 : 6.5,
+        color: "#fff",
+        weight: 2,
+        fillColor: color,
+        fillOpacity: 0.96,
+      });
+    },
+    onEachFeature: bindStopPopup,
+  }).addTo(map);
+
+  L.control.layers(
+    { OpenStreetMap: base },
+    {
+      "观察格网范围示意": state.layers.coverageAreas,
+      "研学观察顺序": state.layers.routeLines,
+      "研学观察节点": state.layers.routeStops,
+      "选用观察窗口": state.layers.segments,
+      "JSD 移动窗口": state.layers.windows,
+      "秦岭参考线": state.layers.boundary,
+      "20km观察格网": state.layers.points,
+    },
+    { collapsed: false }
+  ).addTo(map);
+
+  state.map = map;
+  renderStopPanel(routeStops.features);
+  renderLegend();
+  renderMiniRouteMaps();
+  fitAll();
+}
+
+function fitAll() {
+  const layers = [
+    ...state.layers.routeLines.getLayers(),
+    ...state.layers.coverageAreas.getLayers(),
+    ...state.layers.routeStops.getLayers(),
+    ...state.layers.segments.getLayers(),
+    ...state.layers.boundary.getLayers(),
+  ];
+  const group = L.featureGroup(layers);
+  const bounds = group.getBounds();
+  if (bounds.isValid()) state.map.fitBounds(bounds.pad(0.15));
+}
+
+function renderLegend() {
+  const items = [
+    ["观察格网范围示意", "rgba(152,45,57,0.22)", "line"],
+    ["研学观察顺序", "#982d39", "line"],
+    ["选用观察窗口", "#f2b84b", "line"],
+    ["秦岭线", "#18364d", "line"],
+    ["A侧20km格网", "#1e5d86", "dot"],
+    ["B侧20km格网", "#bd7b25", "dot"],
+    ["沿线资料核查节点", "#982d39", "dot"],
+  ];
+  document.getElementById("legend").innerHTML = items.map(([label, color, type]) => `
+    <span class="legend-item"><span class="${type === "dot" ? "swatch-dot" : "swatch-line"}" style="background:${color}"></span>${label}</span>
+  `).join("");
+}
+
+function routeStopsBySection(sectionNo) {
+  return state.route.features.filter(feature =>
+    feature.geometry?.type === "Point"
+    && Number(feature.properties?.section_no) === Number(sectionNo)
+  );
+}
+
+function routeLineBySection(sectionNo) {
+  return state.route.features.find(feature =>
+    feature.geometry?.type === "LineString"
+    && Number(feature.properties?.section_no) === Number(sectionNo)
+  );
+}
+
+function coverageBySection(sectionNo) {
+  return state.route.features.find(feature =>
+    feature.geometry?.type === "Polygon"
+    && Number(feature.properties?.section_no) === Number(sectionNo)
+  );
+}
+
+function renderMiniRouteMaps() {
+  state.plan.route_sections.forEach(section => {
+    const mapId = `routeMiniMap-${section.section_no}`;
+    const el = document.getElementById(mapId);
+    if (!el || el.dataset.ready === "1") return;
+
+    const mini = L.map(mapId, {
+      zoomControl: false,
+      attributionControl: false,
+      dragging: true,
+      scrollWheelZoom: false,
+    }).setView([34, 107], 7);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18,
+    }).addTo(mini);
+
+    const layers = [];
+    const coverage = coverageBySection(section.section_no);
+    const routeLine = routeLineBySection(section.section_no);
+    const stops = routeStopsBySection(section.section_no);
+
+    if (coverage) {
+      layers.push(L.geoJSON(coverage, {
+        style: { color: "#982d39", weight: 1.2, opacity: 0.75, fillColor: "#982d39", fillOpacity: 0.10 },
+      }).addTo(mini));
+    }
+
+    if (routeLine) {
+      layers.push(L.geoJSON(routeLine, {
+        style: { color: "#982d39", weight: 5, opacity: 0.95, lineCap: "round" },
+      }).addTo(mini));
+    }
+
+    if (stops.length) {
+      layers.push(L.geoJSON({ type: "FeatureCollection", features: stops }, {
+        pointToLayer: (feature, latlng) => {
+          const type = feature.properties?.stop_type;
+          const color = type === "文化遗址/古道资料点" ? "#2c7a62"
+            : type === "沿线解释节点" ? "#982d39"
+            : feature.properties?.side === "A" ? "#1e5d86" : "#bd7b25";
+          return L.circleMarker(latlng, {
+            radius: type === "文化遗址/古道资料点" ? 6 : 6.8,
+            color: "#fff",
+            weight: 1.6,
+            fillColor: color,
+            fillOpacity: 0.96,
+          });
+        },
+        onEachFeature: bindStopPopup,
+      }).addTo(mini));
+    }
+
+    if (layers.length) {
+      const group = L.featureGroup(layers);
+      const bounds = group.getBounds();
+      if (bounds.isValid()) mini.fitBounds(bounds.pad(0.15));
+    }
+
+    el.dataset.ready = "1";
+  });
+}
+
+function renderStopPanel(stops) {
+  document.getElementById("stopPanel").innerHTML = stops.map(feature => {
+    const p = feature.properties || {};
+    return `
+      <div class="stop-card">
+        <strong>${escapeHtml(p.stop_id)} ${escapeHtml(p.title)}</strong>
+        <p>${escapeHtml(p.route_task || "")}</p>
+        <p>观察对象：${escapeHtml(p.n_sources ? "20km格网 · " + p.n_sources + "条来源" : "参考线资料核查节点")}；社区：${escapeHtml(p.top_community || "待现场核查")}；语义类型：待人工核验</p>
+      </div>
+    `;
+  }).join("");
+}
+
+function renderRouteSections() {
+  document.getElementById("routeSections").innerHTML = state.plan.route_sections.map(section => `
+    <div class="route-card route-story-card">
+      <div class="route-story-map" id="routeMiniMap-${section.section_no}"></div>
+      <div class="route-story-content">
+        <div class="route-kicker">Route ${section.section_no} · ${escapeHtml(section.coverage_label || "秦岭研学覆盖区")}</div>
+        <h3>${escapeHtml(section.title)}</h3>
+        <p class="route-subtitle">${escapeHtml(section.subtitle || section.route_value)}</p>
+        <div class="route-stats">
+          <span>station_km ${formatNumber(section.station_range[0], 0)}-${formatNumber(section.station_range[1], 0)}</span>
+          <span>覆盖长度 ${formatNumber(section.length_km, 0)} km</span>
+          <span>窗口 JSD ${formatNumber(section.local_JSD)}</span>
+          <span>A/B 社区 ${escapeHtml(section.dominant_A_mode || "—")} / ${escapeHtml(section.dominant_B_mode || "—")}</span>
+        </div>
+        <p class="route-value">${escapeHtml(section.route_value)}</p>
+        <div class="route-story-columns">
+          <div>
+            <strong>文化遗址与资料线索</strong>
+            <ul class="task-list">
+              ${(section.heritage_sites || []).map(site => `
+                <li><b>${escapeHtml(site.name)}</b>：${escapeHtml(site.site_type)}。${escapeHtml(site.description)}</li>
+              `).join("")}
+            </ul>
+          </div>
+          <div>
+            <strong>研学项目设计</strong>
+            <ul class="task-list">
+              ${(section.route_projects || []).map(project => `<li>${escapeHtml(project)}</li>`).join("")}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderSources() {
+  document.getElementById("sourceCards").innerHTML = state.plan.cultural_sources.map(source => `
+    <div class="source-card">
+      <strong>${escapeHtml(source.title)}</strong>
+      <p>${escapeHtml(source.summary)}</p>
+      <p>路线用途：${escapeHtml(source.route_use)}</p>
+      <p><a href="${escapeHtml(source.url)}" target="_blank" rel="noopener">查看资料来源</a></p>
+    </div>
+  `).join("");
+}
+
+function renderCommunityMatrix() {
+  document.getElementById("communityMatrix").innerHTML = state.plan.route_sections.map(section => {
+    const sides = section.side_summaries || {};
+    const sideBlocks = Object.entries(sides).map(([side, data]) => `
+      <div class="community-side">
+        <strong>${escapeHtml(data.side_label || side)}：${escapeHtml(side)}</strong>
+        <p>有效来源：${escapeHtml(data.n_sources || 0)} 条</p>
+        <p>主要社区：${renderTags(data.top_communities)}</p>
+        <p>语义类型：${renderTags([{name: data.semantic_status, share: null}])}</p>
+        <p>大类特征：${renderTags([{name: "文化大类待核验", share: null}])}</p>
+        <p>实际特征字命中率：${renderTags(data.top_features)}</p>
+      </div>
+    `).join("");
+    return `
+      <div class="community-card">
+        <div>
+          <strong>${escapeHtml(section.title)}</strong>
+          <p>窗口 JSD：${formatNumber(section.local_JSD)}；CB 窗口JSD：${formatNumber(section.CB_local_JSD)}</p>
+        </div>
+        ${sideBlocks}
+      </div>
+    `;
+  }).join("");
+}
+
+function renderTags(items) {
+  if (!items || !items.length) return '<span class="tag">—</span>';
+  return `<span class="tag-list">${items.slice(0, 6).map(item => `<span class="tag">${escapeHtml(item.name)}${item.share == null ? "" : " " + formatPercent(item.share)}</span>`).join("")}</span>`;
+}
+
+function renderScript() {
+  document.getElementById("scriptBox").innerHTML = state.plan.script_paragraphs.map(escapeHtml).join("<br><br>");
+}
+
+function bindStopPopup(feature, layer) {
+  const p = feature.properties || {};
+  layer.bindPopup(`
+    <div class="popup">
+      <strong>${escapeHtml(p.stop_id)} ${escapeHtml(p.title)}</strong>
+      <div>${escapeHtml(p.route_task || "")}</div>
+      <div>观察对象：${escapeHtml(p.n_sources ? "20km格网 · " + p.n_sources + "条来源" : "参考线资料核查节点")}</div>
+      <div>窗口特征：${escapeHtml(p.top_features || "资料待核查")}</div>
+      <div>数据口径：C 主方案有效来源</div>
+      <div>位置性质：公开聚合格网或参考线节点</div>
+      <div>语义类型：待人工核验</div>
+      <div>社区：${escapeHtml(p.top_community || "待现场核查")}</div>
+    </div>
+  `);
+}
+
+function bindRouteLinePopup(feature, layer) {
+  const p = feature.properties || {};
+  layer.bindPopup(`
+    <div class="popup">
+      <strong>${escapeHtml(p.title || "研学观察顺序")}</strong>
+      <div>对应窗口：${escapeHtml(p.window_id || "—")}</div>
+      <div>station_km：${formatNumber(p.start_km, 0)}-${formatNumber(p.end_km, 0)}</div>
+      <div>窗口 JSD：${formatNumber(p.local_JSD)}</div>
+      <div>说明：路线用于研学观察，不等同于道路导航。</div>
+    </div>
+  `);
+}
+
+function bindSegmentPopup(feature, layer) {
+  const p = feature.properties || {};
+  layer.bindPopup(`
+    <div class="popup">
+      <strong>选用观察窗口 #${escapeHtml(p.window_id ?? "—")}</strong>
+      <div>station_km：${formatNumber(p.start_km, 0)}-${formatNumber(p.end_km, 0)}</div>
+      <div>长度：${formatNumber((p.end_km-p.start_km), 0)} km</div>
+      <div>窗口 JSD：${formatNumber(p.local_JSD)}</div>
+      <div>A/B 优势社区：${escapeHtml(p.dominant_A_mode || "—")} / ${escapeHtml(p.dominant_B_mode || "—")}</div>
+    </div>
+  `);
+}
+
+function bindWindowPopup(feature, layer) {
+  const p = feature.properties || {};
+  layer.bindPopup(`
+    <div class="popup">
+      <strong>选线窗口 #${escapeHtml(p.window_id ?? "—")}</strong>
+      <div>station_km：${formatNumber(p.start_km, 0)}-${formatNumber(p.end_km, 0)}</div>
+      <div>窗口 JSD：${formatNumber(p.local_JSD)}</div>
+      <div>来源与几何合格窗口：${p.reliable_window ? "是" : "否"}</div>
+    </div>
+  `);
+}
+
+function bindPointPopup(feature, layer) {
+  const p = feature.properties || {};
+  layer.bindPopup(`
+    <div class="popup">
+      <strong>${escapeHtml(p.side)}侧20km观察格网</strong>
+      <div>来源数：${escapeHtml(p.n_sources)}</div>
+      <div>主要社区：${escapeHtml(p.top_community)}</div>
+      <div>社区质量比例：${formatPercent(p.top_share)}</div>
+      <div>实际特征字：${escapeHtml(p.features)}</div>
+      <div>对应窗口：${escapeHtml(p.window_id)}</div>
+      <div>公开格网中心，不是村庄点位。</div>
+    </div>
+  `);
+}
+
+function formatNumber(value, digits = 4) {
+  if (value == null) return "NA";
+  const num = Number(value);
+  if (!Number.isFinite(num)) return "—";
+  return num.toFixed(digits);
+}
+
+function formatPercent(value) {
+  if (value == null) return "NA";
+  const num = Number(value);
+  if (!Number.isFinite(num)) return "—";
+  return `${(num * 100).toFixed(1)}%`;
+}
+
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+init();
