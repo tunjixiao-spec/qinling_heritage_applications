@@ -1,0 +1,1151 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.26508,
+            35.21125
+          ],
+          [
+            103.74431,
+            34.98411
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20904,
+        "start_km": 0.0,
+        "end_km": 50.0,
+        "center_km": 0.0,
+        "reliable_window": false,
+        "local_JSD": null,
+        "NA_reason": "geometry_ineligible_clip_or_closed_or_no_sources",
+        "n_effective_A": 826,
+        "n_effective_B": 138
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.26508,
+            35.21125
+          ],
+          [
+            103.93523,
+            34.89273
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20905,
+        "start_km": 0.0,
+        "end_km": 70.0,
+        "center_km": 20.0,
+        "reliable_window": false,
+        "local_JSD": null,
+        "NA_reason": "geometry_ineligible_clip_or_closed_or_no_sources",
+        "n_effective_A": 937,
+        "n_effective_B": 225
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.26508,
+            35.21125
+          ],
+          [
+            104.06458,
+            34.83053
+          ],
+          [
+            104.12911,
+            34.80608
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20906,
+        "start_km": 0.0,
+        "end_km": 90.0,
+        "center_km": 40.0,
+        "reliable_window": false,
+        "local_JSD": null,
+        "NA_reason": "geometry_ineligible_clip_or_closed_or_no_sources",
+        "n_effective_A": 1016,
+        "n_effective_B": 339
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.36115,
+            35.16597
+          ],
+          [
+            104.06458,
+            34.83053
+          ],
+          [
+            104.32978,
+            34.72971
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20907,
+        "start_km": 10.0,
+        "end_km": 110.0,
+        "center_km": 60.0,
+        "reliable_window": true,
+        "local_JSD": 0.0238091318904718,
+        "NA_reason": null,
+        "n_effective_A": 614,
+        "n_effective_B": 457
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.55295,
+            35.07519
+          ],
+          [
+            104.06458,
+            34.83053
+          ],
+          [
+            104.46433,
+            34.67825
+          ],
+          [
+            104.5324,
+            34.65735
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20908,
+        "start_km": 30.0,
+        "end_km": 130.0,
+        "center_km": 80.0,
+        "reliable_window": true,
+        "local_JSD": 0.028480947366811,
+        "NA_reason": null,
+        "n_effective_A": 571,
+        "n_effective_B": 544
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.74431,
+            34.98411
+          ],
+          [
+            104.06458,
+            34.83053
+          ],
+          [
+            104.46433,
+            34.67825
+          ],
+          [
+            104.73948,
+            34.59348
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20909,
+        "start_km": 50.0,
+        "end_km": 150.0,
+        "center_km": 100.0,
+        "reliable_window": true,
+        "local_JSD": 0.0249729931951243,
+        "NA_reason": null,
+        "n_effective_A": 534,
+        "n_effective_B": 536
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            103.93523,
+            34.89273
+          ],
+          [
+            104.06458,
+            34.83053
+          ],
+          [
+            104.46433,
+            34.67825
+          ],
+          [
+            104.94739,
+            34.53179
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20910,
+        "start_km": 70.0,
+        "end_km": 170.0,
+        "center_km": 120.0,
+        "reliable_window": true,
+        "local_JSD": 0.027037980362349,
+        "NA_reason": null,
+        "n_effective_A": 633,
+        "n_effective_B": 487
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.12911,
+            34.80608
+          ],
+          [
+            104.46433,
+            34.67825
+          ],
+          [
+            104.8498,
+            34.55927
+          ],
+          [
+            105.0354,
+            34.50692
+          ],
+          [
+            105.16185,
+            34.48947
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20911,
+        "start_km": 90.0,
+        "end_km": 190.0,
+        "center_km": 140.0,
+        "reliable_window": true,
+        "local_JSD": 0.0206227345335596,
+        "NA_reason": null,
+        "n_effective_A": 733,
+        "n_effective_B": 479
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.32978,
+            34.72971
+          ],
+          [
+            104.46433,
+            34.67825
+          ],
+          [
+            104.8498,
+            34.55927
+          ],
+          [
+            105.0354,
+            34.50692
+          ],
+          [
+            105.38014,
+            34.45903
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20912,
+        "start_km": 110.0,
+        "end_km": 210.0,
+        "center_km": 160.0,
+        "reliable_window": true,
+        "local_JSD": 0.0150932758890558,
+        "NA_reason": null,
+        "n_effective_A": 898,
+        "n_effective_B": 511
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.5324,
+            34.65735
+          ],
+          [
+            104.8498,
+            34.55927
+          ],
+          [
+            105.0354,
+            34.50692
+          ],
+          [
+            105.59826,
+            34.4282
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20913,
+        "start_km": 130.0,
+        "end_km": 230.0,
+        "center_km": 180.0,
+        "reliable_window": true,
+        "local_JSD": 0.0074468283468727,
+        "NA_reason": null,
+        "n_effective_A": 1047,
+        "n_effective_B": 669
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.73948,
+            34.59348
+          ],
+          [
+            105.0354,
+            34.50692
+          ],
+          [
+            105.66466,
+            34.41873
+          ],
+          [
+            105.74203,
+            34.42619
+          ],
+          [
+            105.81681,
+            34.41536
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20914,
+        "start_km": 150.0,
+        "end_km": 250.0,
+        "center_km": 200.0,
+        "reliable_window": true,
+        "local_JSD": 0.0045911758557379,
+        "NA_reason": null,
+        "n_effective_A": 1210,
+        "n_effective_B": 771
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            104.94739,
+            34.53179
+          ],
+          [
+            105.0354,
+            34.50692
+          ],
+          [
+            105.66466,
+            34.41873
+          ],
+          [
+            105.74203,
+            34.42619
+          ],
+          [
+            106.03459,
+            34.38355
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20915,
+        "start_km": 170.0,
+        "end_km": 270.0,
+        "center_km": 220.0,
+        "reliable_window": true,
+        "local_JSD": 0.0041413304229385,
+        "NA_reason": null,
+        "n_effective_A": 1218,
+        "n_effective_B": 776
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.16185,
+            34.48947
+          ],
+          [
+            105.66466,
+            34.41873
+          ],
+          [
+            105.74203,
+            34.42619
+          ],
+          [
+            106.25219,
+            34.35136
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20916,
+        "start_km": 190.0,
+        "end_km": 290.0,
+        "center_km": 240.0,
+        "reliable_window": true,
+        "local_JSD": 0.001860520543059,
+        "NA_reason": null,
+        "n_effective_A": 1136,
+        "n_effective_B": 696
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.38014,
+            34.45903
+          ],
+          [
+            105.66466,
+            34.41873
+          ],
+          [
+            105.74203,
+            34.42619
+          ],
+          [
+            106.46962,
+            34.31879
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20917,
+        "start_km": 210.0,
+        "end_km": 310.0,
+        "center_km": 260.0,
+        "reliable_window": true,
+        "local_JSD": 0.0019109959875529,
+        "NA_reason": null,
+        "n_effective_A": 911,
+        "n_effective_B": 526
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.59826,
+            34.4282
+          ],
+          [
+            105.66466,
+            34.41873
+          ],
+          [
+            105.74203,
+            34.42619
+          ],
+          [
+            106.68687,
+            34.28583
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20918,
+        "start_km": 230.0,
+        "end_km": 330.0,
+        "center_km": 280.0,
+        "reliable_window": true,
+        "local_JSD": 0.0010842900205161,
+        "NA_reason": null,
+        "n_effective_A": 692,
+        "n_effective_B": 304
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            105.81681,
+            34.41536
+          ],
+          [
+            106.90393,
+            34.25249
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20919,
+        "start_km": 250.0,
+        "end_km": 350.0,
+        "center_km": 300.0,
+        "reliable_window": true,
+        "local_JSD": 0.0014593055145983,
+        "NA_reason": null,
+        "n_effective_A": 423,
+        "n_effective_B": 165
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.03459,
+            34.38355
+          ],
+          [
+            107.12082,
+            34.21877
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20920,
+        "start_km": 270.0,
+        "end_km": 370.0,
+        "center_km": 320.0,
+        "reliable_window": true,
+        "local_JSD": 0.0036907927793381,
+        "NA_reason": null,
+        "n_effective_A": 407,
+        "n_effective_B": 137
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.25219,
+            34.35136
+          ],
+          [
+            107.18472,
+            34.20876
+          ],
+          [
+            107.33193,
+            34.16812
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20921,
+        "start_km": 290.0,
+        "end_km": 390.0,
+        "center_km": 340.0,
+        "reliable_window": true,
+        "local_JSD": 0.0094465910118961,
+        "NA_reason": null,
+        "n_effective_A": 614,
+        "n_effective_B": 122
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.46962,
+            34.31879
+          ],
+          [
+            107.18472,
+            34.20876
+          ],
+          [
+            107.53919,
+            34.10734
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20922,
+        "start_km": 310.0,
+        "end_km": 410.0,
+        "center_km": 360.0,
+        "reliable_window": true,
+        "local_JSD": 0.0199776908294777,
+        "NA_reason": null,
+        "n_effective_A": 744,
+        "n_effective_B": 104
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.68687,
+            34.28583
+          ],
+          [
+            107.18472,
+            34.20876
+          ],
+          [
+            107.74715,
+            34.04886
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20923,
+        "start_km": 330.0,
+        "end_km": 430.0,
+        "center_km": 380.0,
+        "reliable_window": true,
+        "local_JSD": 0.0387006339525011,
+        "NA_reason": null,
+        "n_effective_A": 827,
+        "n_effective_B": 83
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            106.90393,
+            34.25249
+          ],
+          [
+            107.18472,
+            34.20876
+          ],
+          [
+            107.71705,
+            34.05483
+          ],
+          [
+            107.96103,
+            34.00624
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20924,
+        "start_km": 350.0,
+        "end_km": 450.0,
+        "center_km": 400.0,
+        "reliable_window": true,
+        "local_JSD": 0.023346888582481,
+        "NA_reason": null,
+        "n_effective_A": 995,
+        "n_effective_B": 65
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.12082,
+            34.21877
+          ],
+          [
+            107.18472,
+            34.20876
+          ],
+          [
+            107.25792,
+            34.18971
+          ],
+          [
+            107.71705,
+            34.05483
+          ],
+          [
+            108.14535,
+            33.96917
+          ],
+          [
+            108.17553,
+            33.96771
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20925,
+        "start_km": 370.0,
+        "end_km": 470.0,
+        "center_km": 420.0,
+        "reliable_window": true,
+        "local_JSD": 0.0405112843531776,
+        "NA_reason": null,
+        "n_effective_A": 1030,
+        "n_effective_B": 75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.33193,
+            34.16812
+          ],
+          [
+            107.71705,
+            34.05483
+          ],
+          [
+            108.14535,
+            33.96917
+          ],
+          [
+            108.39528,
+            33.95685
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20926,
+        "start_km": 390.0,
+        "end_km": 490.0,
+        "center_km": 440.0,
+        "reliable_window": true,
+        "local_JSD": 0.03214233247893,
+        "NA_reason": null,
+        "n_effective_A": 1015,
+        "n_effective_B": 72
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.53919,
+            34.10734
+          ],
+          [
+            107.71705,
+            34.05483
+          ],
+          [
+            108.14535,
+            33.96917
+          ],
+          [
+            108.61482,
+            33.94414
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20927,
+        "start_km": 410.0,
+        "end_km": 510.0,
+        "center_km": 460.0,
+        "reliable_window": true,
+        "local_JSD": 0.032318237268021,
+        "NA_reason": null,
+        "n_effective_A": 1255,
+        "n_effective_B": 61
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.74715,
+            34.04886
+          ],
+          [
+            108.14535,
+            33.96917
+          ],
+          [
+            108.57366,
+            33.94775
+          ],
+          [
+            108.83358,
+            33.9247
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20928,
+        "start_km": 430.0,
+        "end_km": 530.0,
+        "center_km": 480.0,
+        "reliable_window": true,
+        "local_JSD": 0.0473421594020824,
+        "NA_reason": null,
+        "n_effective_A": 1805,
+        "n_effective_B": 69
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            107.96103,
+            34.00624
+          ],
+          [
+            108.14535,
+            33.96917
+          ],
+          [
+            108.57366,
+            33.94775
+          ],
+          [
+            108.97341,
+            33.91206
+          ],
+          [
+            109.05133,
+            33.92406
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20929,
+        "start_km": 450.0,
+        "end_km": 550.0,
+        "center_km": 500.0,
+        "reliable_window": true,
+        "local_JSD": 0.0473211661530659,
+        "NA_reason": null,
+        "n_effective_A": 2340,
+        "n_effective_B": 88
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.17553,
+            33.96771
+          ],
+          [
+            108.57366,
+            33.94775
+          ],
+          [
+            108.97341,
+            33.91206
+          ],
+          [
+            109.26758,
+            33.9571
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20930,
+        "start_km": 470.0,
+        "end_km": 570.0,
+        "center_km": 520.0,
+        "reliable_window": true,
+        "local_JSD": 0.0405140614421928,
+        "NA_reason": null,
+        "n_effective_A": 2699,
+        "n_effective_B": 96
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.39528,
+            33.95685
+          ],
+          [
+            108.57366,
+            33.94775
+          ],
+          [
+            108.97341,
+            33.91206
+          ],
+          [
+            109.39457,
+            33.97631
+          ],
+          [
+            109.46391,
+            34.02372
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20931,
+        "start_km": 490.0,
+        "end_km": 590.0,
+        "center_km": 540.0,
+        "reliable_window": true,
+        "local_JSD": 0.0364077545061336,
+        "NA_reason": null,
+        "n_effective_A": 2546,
+        "n_effective_B": 158
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.61482,
+            33.94414
+          ],
+          [
+            108.97341,
+            33.91206
+          ],
+          [
+            109.39457,
+            33.97631
+          ],
+          [
+            109.63207,
+            34.13833
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20932,
+        "start_km": 510.0,
+        "end_km": 610.0,
+        "center_km": 560.0,
+        "reliable_window": true,
+        "local_JSD": 0.0287074805933074,
+        "NA_reason": null,
+        "n_effective_A": 2353,
+        "n_effective_B": 250
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            108.83358,
+            33.9247
+          ],
+          [
+            108.97341,
+            33.91206
+          ],
+          [
+            109.39457,
+            33.97631
+          ],
+          [
+            109.80072,
+            34.25269
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20933,
+        "start_km": 530.0,
+        "end_km": 630.0,
+        "center_km": 580.0,
+        "reliable_window": true,
+        "local_JSD": 0.0191252890246067,
+        "NA_reason": null,
+        "n_effective_A": 1947,
+        "n_effective_B": 375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.05133,
+            33.92406
+          ],
+          [
+            109.39457,
+            33.97631
+          ],
+          [
+            109.96985,
+            34.36682
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20934,
+        "start_km": 550.0,
+        "end_km": 650.0,
+        "center_km": 600.0,
+        "reliable_window": true,
+        "local_JSD": 0.0089533147839206,
+        "NA_reason": null,
+        "n_effective_A": 1395,
+        "n_effective_B": 478
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.26758,
+            33.9571
+          ],
+          [
+            109.39457,
+            33.97631
+          ],
+          [
+            109.99419,
+            34.38319
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20935,
+        "start_km": 570.0,
+        "end_km": 652.8734227585961,
+        "center_km": 620.0,
+        "reliable_window": false,
+        "local_JSD": null,
+        "NA_reason": "geometry_ineligible_clip_or_closed_or_no_sources",
+        "n_effective_A": 1201,
+        "n_effective_B": 582
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.46391,
+            34.02372
+          ],
+          [
+            109.99419,
+            34.38319
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20936,
+        "start_km": 590.0,
+        "end_km": 652.8734227585961,
+        "center_km": 640.0,
+        "reliable_window": false,
+        "local_JSD": null,
+        "NA_reason": "geometry_ineligible_clip_or_closed_or_no_sources",
+        "n_effective_A": 1065,
+        "n_effective_B": 512
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            109.57209,
+            34.09752
+          ],
+          [
+            109.99419,
+            34.38319
+          ]
+        ]
+      },
+      "properties": {
+        "window_id": 20937,
+        "start_km": 602.8734227585961,
+        "end_km": 652.8734227585961,
+        "center_km": 652.8734227585961,
+        "reliable_window": false,
+        "local_JSD": null,
+        "NA_reason": "geometry_ineligible_clip_or_closed_or_no_sources",
+        "n_effective_A": 928,
+        "n_effective_B": 479
+      }
+    }
+  ]
+}

@@ -1,0 +1,1118 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.761395,
+          34.218090000000004
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 27,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.60802469,
+        "features": "家 4、马 2、河 2、新 2、安 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.767545,
+          34.395179999999996
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 12,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.63888889,
+        "features": "西 1、街 1、寨 1、家 1、堡 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.97554500000001,
+          34.03586
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 8,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.5625,
+        "features": "张 1、庙 1、家 1、塔 1、东 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.98216500000001,
+          34.212965
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 127,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.48269591,
+        "features": "家 16、西 14、寨 11、东 8、上 5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.988815,
+          34.390045
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 107,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.54494882,
+        "features": "家 15、新 6、西 4、沟 4、庄 4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.1958,
+          34.030355
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 59,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0001",
+        "top_share": 0.41242938,
+        "features": "兴 7、三 7、马 3、新 2、寨 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.202905,
+          34.207449999999994
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 181,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.50460405,
+        "features": "家 16、寨 12、东 12、西 10、北 10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.21005,
+          34.384515
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 89,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.6170412,
+        "features": "南 9、马 7、西 7、北 7、庄 6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.416025,
+          34.02445
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 63,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.55820106,
+        "features": "家 10、堡 6、西 4、寨 4、东 4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.423625,
+          34.201539999999994
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 143,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.56060606,
+        "features": "家 11、新 8、寨 8、马 7、张 7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.43125,
+          34.37859
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 101,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.65487977,
+        "features": "北 12、南 8、庄 7、东 7、马 6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.63621,
+          34.018159999999995
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 115,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.5057971,
+        "features": "南 11、寨 10、庄 9、家 9、西 8"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.6443,
+          34.195229999999995
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 171,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.54122807,
+        "features": "家 16、南 12、王 11、寨 10、北 10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.652425,
+          34.372275
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 229,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0001",
+        "top_share": 0.53266272,
+        "features": "路 58、西 29、家 18、北 17、南 11"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.856365,
+          34.011475000000004
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 40,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.4375,
+        "features": "新 4、东 4、北 3、西 2、街 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.86494,
+          34.188535
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 233,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.50343348,
+        "features": "西 21、家 19、寨 18、东 18、庄 16"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.873555,
+          34.36556
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "A",
+        "n_sources": 99,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0001",
+        "top_share": 0.44353054,
+        "features": "路 16、家 13、西 9、北 7、园 6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.74916,
+          33.863820000000004
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "B",
+        "n_sources": 5,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.36666667,
+        "features": "老 1、子 1、坪 1、合 1、三 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          107.968955,
+          33.858720000000005
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "B",
+        "n_sources": 12,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0001",
+        "top_share": 0.44444444,
+        "features": "河 2、坪 2、合 2、六 2、沟 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.188725,
+          33.853224999999995
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "B",
+        "n_sources": 12,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.54166667,
+        "features": "庙 2、子 2、老 1、王 1、河 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.40093,
+          33.670190000000005
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "B",
+        "n_sources": 6,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0001",
+        "top_share": 0.75,
+        "features": "河 1、新 1、双 1、兴 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.61216999999999,
+          33.486755
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "B",
+        "n_sources": 5,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0004",
+        "top_share": 0.4,
+        "features": "河 1、沟 1、大 1、坝 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          108.62015,
+          33.663925000000006
+        ]
+      },
+      "properties": {
+        "section_no": 1,
+        "window_id": 20928,
+        "side": "B",
+        "n_sources": 9,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0004",
+        "top_share": 0.64814815,
+        "features": "江 3、沟 2、河 1、沙 1、桥 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.55498,
+          34.60194
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 15,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.6,
+        "features": "张 3、山 3、家 3、崖 2、马 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.775185,
+          34.423625
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 25,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.64666667,
+        "features": "家 7、湾 4、集 3、沟 3、山 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.776925,
+          34.60075
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 182,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.49267399,
+        "features": "家 27、路 14、庄 13、西 10、湾 10"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.77866,
+          34.777845
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 107,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.64330218,
+        "features": "山 12、庄 11、湾 10、王 8、李 6"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.99662000000001,
+          34.422045
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 42,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.59126984,
+        "features": "湾 4、河 4、庄 4、家 4、坪 4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.99885,
+          34.599165
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 105,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.47913832,
+        "features": "家 9、坪 7、山 6、湾 5、林 5"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.00109,
+          34.77625999999999
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 50,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.58,
+        "features": "湾 6、沟 4、林 4、川 3、西 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.218045,
+          34.42007
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 6,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0004",
+        "top_share": 0.55555556,
+        "features": "坪 2、石 1、王 1、河 1、家 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.22077,
+          34.597184999999996
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 49,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.50680272,
+        "features": "石 5、湾 4、庄 4、川 4、家 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.22350499999999,
+          34.774275
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 36,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.52991453,
+        "features": "沟 8、马 2、西 2、湾 2、杨 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.43945500000001,
+          34.417699999999996
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 9,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.38888889,
+        "features": "坪 2、集 1、石 1、庄 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.44267500000001,
+          34.59481
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 16,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.55208333,
+        "features": "川 3、河 2、山 2、家 2、集 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.445905,
+          34.771895
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 15,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.73333333,
+        "features": "河 3、山 2、刘 2、马 1、沟 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.660855,
+          34.414935
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 23,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.41304348,
+        "features": "家 4、沟 3、川 3、坪 2、东 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.66456500000001,
+          34.59204
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "A",
+        "n_sources": 6,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.52777778,
+        "features": "西 1、沟 1、家 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.55128500000001,
+          34.070485
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 27,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.40740741,
+        "features": "山 3、马 2、湾 2、河 2、集 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.55251,
+          34.247659999999996
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 44,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.625,
+        "features": "沟 5、集 4、山 4、石 3、湾 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.55375000000001,
+          34.424814999999995
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 12,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.625,
+        "features": "沟 2、李 2、集 1、张 1、山 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.771745,
+          34.0693
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 15,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0004",
+        "top_share": 0.36666667,
+        "features": "新 2、川 2、坪 2、西 1、石 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.77346,
+          34.24648
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 52,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.55128205,
+        "features": "家 9、寨 6、沟 5、山 5、坝 4"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.775185,
+          34.423625
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 38,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.63596491,
+        "features": "家 9、集 6、沟 4、庄 4、山 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.989995,
+          33.890525
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 5,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.5,
+        "features": "山 2、王 1、庄 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.99219500000001,
+          34.067725
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 13,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.5,
+        "features": "王 1、湾 1、店 1、坝 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.994405,
+          34.2449
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 10,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.48333333,
+        "features": "河 2、庄 2、水 1、林 1、新 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.209945,
+          33.88856
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 15,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.45555556,
+        "features": "西 2、庙 2、坪 2、沟 1、林 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.212635,
+          34.06576
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 11,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.55844156,
+        "features": "湾 2、坪 2、马 1、河 1、沟 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.21533500000001,
+          34.242925
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 6,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0001",
+        "top_share": 0.33862434,
+        "features": "水 2、拟 2、石 1、新 1、庙 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.42989,
+          33.8862
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 25,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.56333333,
+        "features": "家 8、庄 4、坪 4、沟 3、店 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.433065,
+          34.0634
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 9,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0002",
+        "top_share": 0.50925926,
+        "features": "家 3、坪 2、河 1、沟 1、水 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          106.436255,
+          34.240565000000004
+        ]
+      },
+      "properties": {
+        "section_no": 2,
+        "window_id": 20918,
+        "side": "B",
+        "n_sources": 7,
+        "cell_size_km": 20,
+        "coordinate_role": "aggregate_cell_center",
+        "top_community": "L0001",
+        "top_share": 0.58163265,
+        "features": "河 2、水 1、杨 1、拟 1"
+      }
+    }
+  ]
+}

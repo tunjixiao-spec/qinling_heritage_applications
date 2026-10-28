@@ -1,0 +1,72 @@
+{
+  "version": "qinling-heritage-application-2026-10-28-v1",
+  "source_results_commit": "a142072f2a41f09803e4bcf4761f2569d92b07c5",
+  "reference_interface_commit": "bbf5be625b76d42892b36f7f641e42e321c50740",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/boundary.geojson",
+      "bytes": 1185,
+      "sha256": "63ecda4967c2a5b7bed8c04dcf504416544a09ede3265a12b4fc1abfc19b2be8"
+    },
+    {
+      "path": "data/points.geojson",
+      "bytes": 28062,
+      "sha256": "f61f9338bd9da6aecd0b7e11f66b8d53638453e958d07645431c0457911ed4e5"
+    },
+    {
+      "path": "data/route.geojson",
+      "bytes": 6679,
+      "sha256": "76633d4a48bdb78562ace6458ca9bfa93fc563ca4552ca5ce8344b7756557e29"
+    },
+    {
+      "path": "data/route_plan.json",
+      "bytes": 15584,
+      "sha256": "cbec7b578f611eba2de84c6630ebe646866a3920c3001bd8128d31738bc73299"
+    },
+    {
+      "path": "data/segments.geojson",
+      "bytes": 1369,
+      "sha256": "2781dbedb0de2e4abce3dd83c51cab448c19f439db97542d436b2c0488ba0fc2"
+    },
+    {
+      "path": "data/windows.geojson",
+      "bytes": 24640,
+      "sha256": "bd2ed305389646e290769264154c804aee9c71bf3a4f0f4cfc0849f8a1db0c7c"
+    },
+    {
+      "path": "index.html",
+      "bytes": 3205,
+      "sha256": "03bee086bb2b99e0dca0928e46e71b8586fa1f01fec0c38a3894482e0d0dd7e8"
+    },
+    {
+      "path": "static/css/style.css",
+      "bytes": 7092,
+      "sha256": "4c8fd47efa29761ba051de62cfe8ae9eb21a056367fe5fb37bec97f868a5b7c4"
+    },
+    {
+      "path": "static/js/main.js",
+      "bytes": 11254,
+      "sha256": "6afe216165ae207d1f9eeead4d1c0b02d3cc2a467c40b9f427fcbb8971f0a924"
+    },
+    {
+      "path": "static/vendor/leaflet/leaflet.css",
+      "bytes": 14806,
+      "sha256": "a7837102824184820dfa198d1ebcd109ff6d0ff9a2672a074b9a1b4d147d04c6"
+    },
+    {
+      "path": "static/vendor/leaflet/leaflet.js",
+      "bytes": 147552,
+      "sha256": "db49d009c841f5ca34a888c96511ae936fd9f5533e90d8b2c4d57596f4e5641a"
+    },
+    {
+      "path": "static/vendor/leaflet/LICENSE.txt",
+      "bytes": 1395,
+      "sha256": "53e8dc25862014e4324741ca18fbe3611e11d42ef69f59f86ea8c5389647d4cb"
+    }
+  ]
+}

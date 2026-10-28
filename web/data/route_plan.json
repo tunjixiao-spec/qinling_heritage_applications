@@ -1,0 +1,393 @@
+{
+  "app_title": "秦岭南北地名文化遗产研学路线规划",
+  "version": "qinling-application-2026-10-28-v1",
+  "source_results_commit": "a142072f2a41f09803e4bcf4761f2569d92b07c5",
+  "mountain": "秦岭",
+  "primary_side_width_km": 50,
+  "planning_principle": "用较高差异窗口与较低差异窗口作成对观察，依次核对来源支持、两侧社区组成、实际特征字和有出处的文化材料，形成“观察—提问—查证—对照”的研学流程。A/B按冻结参考线方向定义，不直接改称北麓或南麓；图上连线表示观察顺序，具体道路和访问点待实地核查。",
+  "selection_evidence": {
+    "C_mountain_JSD": 0.0209089285890335,
+    "CB_mountain_JSD": 0.0300983487961133,
+    "reliable_coverage_ratio": 0.9802819010395586,
+    "n_reliable_windows": 28,
+    "n_windows": 34,
+    "n_NA_windows": 6,
+    "selected_windows": [
+      20928,
+      20918
+    ]
+  },
+  "route_sections": [
+    {
+      "section_no": 1,
+      "title": "秦岭较高差异窗口研学线",
+      "subtitle": "A侧观察 → 参考线与文化资料核查 → B侧对照",
+      "coverage_label": "窗口20928 · 430—530km参考里程",
+      "window_id": 20928,
+      "selection_role": "C主方案28个可靠窗口中的JSD最大值",
+      "station_range": [
+        430.0,
+        530.0
+      ],
+      "length_km": 100.0,
+      "local_JSD": 0.0473421594020824,
+      "CB_local_JSD": 0.0736737799534374,
+      "seed_min_JSD": 0.0241025896058413,
+      "seed_max_JSD": 0.0653218934971349,
+      "n_effective_A": 1805,
+      "n_effective_B": 69,
+      "dominant_A_mode": "L0002",
+      "dominant_B_mode": "L0004",
+      "side_summaries": {
+        "A": {
+          "side_label": "A侧",
+          "n_sources": 1805,
+          "shown_sources": 1804,
+          "suppressed_sources": 1,
+          "n_cells": 17,
+          "top_communities": [
+            {
+              "name": "L0002",
+              "share": 0.4991036802532646
+            },
+            {
+              "name": "L0001",
+              "share": 0.3302090753198787
+            },
+            {
+              "name": "L0004",
+              "share": 0.1299168975069253
+            },
+            {
+              "name": "L0003",
+              "share": 0.0404933386096821
+            },
+            {
+              "name": "L0056",
+              "share": 0.0002770083102493
+            }
+          ],
+          "top_features": [
+            {
+              "name": "家",
+              "count": 163,
+              "share": 0.09030470914127424
+            },
+            {
+              "name": "西",
+              "count": 129,
+              "share": 0.07146814404432134
+            },
+            {
+              "name": "寨",
+              "count": 99,
+              "share": 0.05484764542936288
+            },
+            {
+              "name": "东",
+              "count": 97,
+              "share": 0.05373961218836565
+            },
+            {
+              "name": "北",
+              "count": 96,
+              "share": 0.05318559556786703
+            },
+            {
+              "name": "路",
+              "count": 96,
+              "share": 0.05318559556786703
+            }
+          ],
+          "semantic_status": "词源与文化语义待人工核实"
+        },
+        "B": {
+          "side_label": "B侧",
+          "n_sources": 69,
+          "shown_sources": 49,
+          "suppressed_sources": 20,
+          "n_cells": 6,
+          "top_communities": [
+            {
+              "name": "L0004",
+              "share": 0.3285024154589372
+            },
+            {
+              "name": "L0001",
+              "share": 0.3236714975845411
+            },
+            {
+              "name": "L0002",
+              "share": 0.323671497584541
+            },
+            {
+              "name": "L0003",
+              "share": 0.0241545893719806
+            },
+            {
+              "name": "L0056",
+              "share": 0.0
+            }
+          ],
+          "top_features": [
+            {
+              "name": "坪",
+              "count": 8,
+              "share": 0.11594202898550725
+            },
+            {
+              "name": "沟",
+              "count": 8,
+              "share": 0.11594202898550725
+            },
+            {
+              "name": "河",
+              "count": 7,
+              "share": 0.10144927536231885
+            },
+            {
+              "name": "坝",
+              "count": 5,
+              "share": 0.07246376811594203
+            },
+            {
+              "name": "大",
+              "count": 4,
+              "share": 0.057971014492753624
+            },
+            {
+              "name": "沙",
+              "count": 4,
+              "share": 0.057971014492753624
+            }
+          ],
+          "semantic_status": "词源与文化语义待人工核实"
+        }
+      },
+      "route_value": "C主方案28个可靠窗口中的JSD最大值。两侧观察节点取各侧显示来源最多的20km格网中心，仅用来组织观察顺序；具体访问点和道路需另行核查。",
+      "heritage_sites": [
+        {
+          "name": "秦蜀古道文献",
+          "site_type": "历史交通资料",
+          "description": "查阅古道名称、年代和通行记载，先核对其是否与选窗范围相交。"
+        },
+        {
+          "name": "石门石刻与地方志",
+          "site_type": "有出处的文字材料",
+          "description": "作为词源、旧名与交通历史的核查示例；未认证为本窗口内的遗址节点。"
+        }
+      ],
+      "route_projects": [
+        "先记录两侧有效来源数、社区质量比例和实际字词命中，再提出待检验的文化解释。",
+        "回查A/B两侧地名原文、读音、旧名与地方志出处；社区编号不直接对应语义类别。",
+        "对照C与CB结果以及优化种子范围；范围是算法变化，不是置信区间。"
+      ],
+      "full_result_url": "https://tunjixiao-spec.github.io/place_barrier_results/?candidate=C_T20_base&mountain=%E7%A7%A6%E5%B2%AD&window=20928&v=20261028-v6"
+    },
+    {
+      "section_no": 2,
+      "title": "秦岭较低差异窗口对照线",
+      "subtitle": "A侧观察 → 参考线与文化资料核查 → B侧对照",
+      "coverage_label": "窗口20918 · 230—330km参考里程",
+      "window_id": 20918,
+      "selection_role": "C主方案28个可靠窗口中的JSD最小值",
+      "station_range": [
+        230.0,
+        330.0
+      ],
+      "length_km": 100.0,
+      "local_JSD": 0.0010842900205161,
+      "CB_local_JSD": 0.0050242432044396,
+      "seed_min_JSD": 0.0002490126966236,
+      "seed_max_JSD": 0.0017922802883119,
+      "n_effective_A": 692,
+      "n_effective_B": 304,
+      "dominant_A_mode": "L0002",
+      "dominant_B_mode": "L0002",
+      "side_summaries": {
+        "A": {
+          "side_label": "A侧",
+          "n_sources": 692,
+          "shown_sources": 686,
+          "suppressed_sources": 6,
+          "n_cells": 15,
+          "top_communities": [
+            {
+              "name": "L0002",
+              "share": 0.5410208770035358
+            },
+            {
+              "name": "L0004",
+              "share": 0.2090876368333016
+            },
+            {
+              "name": "L0001",
+              "share": 0.2050170446124203
+            },
+            {
+              "name": "L0003",
+              "share": 0.0448744415507421
+            },
+            {
+              "name": "L0063",
+              "share": 0.0
+            }
+          ],
+          "top_features": [
+            {
+              "name": "家",
+              "count": 70,
+              "share": 0.10115606936416185
+            },
+            {
+              "name": "湾",
+              "count": 47,
+              "share": 0.06791907514450866
+            },
+            {
+              "name": "山",
+              "count": 43,
+              "share": 0.06213872832369942
+            },
+            {
+              "name": "庄",
+              "count": 38,
+              "share": 0.05491329479768786
+            },
+            {
+              "name": "沟",
+              "count": 34,
+              "share": 0.049132947976878616
+            },
+            {
+              "name": "坪",
+              "count": 33,
+              "share": 0.0476878612716763
+            }
+          ],
+          "semantic_status": "词源与文化语义待人工核实"
+        },
+        "B": {
+          "side_label": "B侧",
+          "n_sources": 304,
+          "shown_sources": 289,
+          "suppressed_sources": 15,
+          "n_cells": 15,
+          "top_communities": [
+            {
+              "name": "L0002",
+              "share": 0.5318765664160401
+            },
+            {
+              "name": "L0004",
+              "share": 0.2215630221386799
+            },
+            {
+              "name": "L0001",
+              "share": 0.2049720655806182
+            },
+            {
+              "name": "L0003",
+              "share": 0.0399436090225564
+            },
+            {
+              "name": "L0063",
+              "share": 0.0016447368421052
+            }
+          ],
+          "top_features": [
+            {
+              "name": "家",
+              "count": 40,
+              "share": 0.13157894736842105
+            },
+            {
+              "name": "沟",
+              "count": 24,
+              "share": 0.07894736842105263
+            },
+            {
+              "name": "庄",
+              "count": 22,
+              "share": 0.07236842105263158
+            },
+            {
+              "name": "山",
+              "count": 20,
+              "share": 0.06578947368421052
+            },
+            {
+              "name": "坪",
+              "count": 18,
+              "share": 0.05921052631578947
+            },
+            {
+              "name": "河",
+              "count": 13,
+              "share": 0.04276315789473684
+            }
+          ],
+          "semantic_status": "词源与文化语义待人工核实"
+        }
+      },
+      "route_value": "C主方案28个可靠窗口中的JSD最小值。两侧观察节点取各侧显示来源最多的20km格网中心，仅用来组织观察顺序；具体访问点和道路需另行核查。",
+      "heritage_sites": [
+        {
+          "name": "秦蜀古道文献",
+          "site_type": "历史交通资料",
+          "description": "查阅古道名称、年代和通行记载，先核对其是否与选窗范围相交。"
+        },
+        {
+          "name": "石门石刻与地方志",
+          "site_type": "有出处的文字材料",
+          "description": "作为词源、旧名与交通历史的核查示例；未认证为本窗口内的遗址节点。"
+        }
+      ],
+      "route_projects": [
+        "先记录两侧有效来源数、社区质量比例和实际字词命中，再提出待检验的文化解释。",
+        "回查A/B两侧地名原文、读音、旧名与地方志出处；社区编号不直接对应语义类别。",
+        "对照C与CB结果以及优化种子范围；范围是算法变化，不是置信区间。"
+      ],
+      "full_result_url": "https://tunjixiao-spec.github.io/place_barrier_results/?candidate=C_T20_base&mountain=%E7%A7%A6%E5%B2%AD&window=20918&v=20261028-v6"
+    }
+  ],
+  "cultural_sources": [
+    {
+      "title": "秦蜀古道：跨越秦岭的历史交通联系",
+      "url": "https://www.shaanxi.gov.cn/zfxxgk/zfgb/2025/d13q/202601/P020260127349976405467.pdf",
+      "summary": "陕西省政府关于秦蜀古道保护利用的答复，列出子午道、傥骆道、褒斜道等线路及遗产调查工作。",
+      "route_use": "把古道作为可能的交流解释，回查原始文献与遗址资料；资料未与本页窗口作空间匹配。"
+    },
+    {
+      "title": "石门石刻与褒斜道的历史记录",
+      "url": "https://hzdqw.hanzhong.gov.cn/hzdfz/zjsy/202406/235edeb385f94662a81eb3954cd7bc0a.shtml",
+      "summary": "汉中市地方志办公室介绍褒斜道及石门石刻的历史背景和记事功能。",
+      "route_use": "练习从碑刻、地方志中核对古名与交通记载；不把资料标题直接当作观察格网中的遗址点。"
+    },
+    {
+      "title": "《石门铭》：交通修复与文字材料",
+      "url": "https://www.dpm.org.cn/lemmas/241188.html",
+      "summary": "故宫博物院介绍《石门铭》及其记述的褒斜道修复内容。",
+      "route_use": "示范“字形线索—有出处的文字材料—历史解释”的核查过程，避免只凭社区编号推断文化属性。"
+    },
+    {
+      "title": "秦岭两侧地名社区与窗口成果",
+      "url": "https://tunjixiao-spec.github.io/place_barrier_results/?candidate=C_T20_base&mountain=%E7%A7%A6%E5%B2%AD&window=20928&v=20261028-v6",
+      "summary": "当前公开成果展示C、CB两主候选及B机制对照，可逐窗查看来源支持、社区组成和特征命中。",
+      "route_use": "回到完整34窗口检查最大值、最小值、其他窗口及6个NA，避免只讲高差异个案。"
+    },
+    {
+      "title": "研究现状与证据范围",
+      "url": "https://tunjixiao-spec.github.io/place_barrier_results/downloads/research-status-20261027.pdf",
+      "summary": "报告记录人工语义、独立方言、条件统计基准与全国地形等尚未闭环的部分。",
+      "route_use": "讲解前区分已有组成描述和待核实的文化解释；具体访问村落、道路和遗址位置另行核查。"
+    }
+  ],
+  "script_paragraphs": [
+    "本次研学从同一套秦岭地名成果中选择一高一低两个组成差异窗口。C主方案的秦岭汇总JSD为0.0209，CB为0.0301；两者各有28个可靠窗口、6个NA窗口，登记参考线的可靠覆盖约98.0%。两个表示的数值分别阅读，不据此排名文化分类优劣。",
+    "第一条观察线使用窗口20928，参考里程430—530km。其C窗口JSD为0.0473，是当前秦岭C主方案可靠窗口中的最大值；A/B两侧有效来源为1805/69。先分别记录社区质量比例和地名特征命中，再讨论来源不平衡和局部差异。50个优化种子的范围为0.0241—0.0653，反映算法变化，不是置信区间。",
+    "第二条对照线使用窗口20918，参考里程230—330km。其C窗口JSD为0.0011，是当前秦岭C主方案可靠窗口中的最小值；A/B两侧有效来源为692/304。保留低差异个案，检查与第一条线相比，组成和特征到底怎样变化。低值不等于不存在任何文化差异。",
+    "每条线按A侧观察格网、参考线资料核查、B侧对照的顺序讲解。地图点是至少5条有效来源的20km聚合格网中心；不是村庄或已确定的参访地点。社区比例与字词命中率使用不同分母，不相互替代。",
+    "把秦蜀古道、石门石刻和地方志作为有出处的背景材料，回查地名原文、旧名、读音和交通联系，记录吻合与反例。现有成果支持组成差异描述，尚未完成语义认证、正式连续段和独立多源证据闭环；研学方案的实际成效也需要现场检验。"
+  ]
+}

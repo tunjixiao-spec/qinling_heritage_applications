@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>秦岭南北地名文化遗产研学路线规划</title>
+  <link rel="stylesheet" href="./static/vendor/leaflet/leaflet.css" />
+  <link rel="stylesheet" href="./static/css/style.css?v=20261028" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Research-based Heritage Route</p>
+        <h1>秦岭南北地名文化遗产研学路线规划</h1>
+        <p class="subtitle">
+          结合秦岭两侧的地名社区、实际特征字和文化资料，以较高与较低组成差异窗口组织成对研学观察。
+        </p>
+      </div>
+      <aside class="hero-note">
+        <strong>路线逻辑</strong>
+        <span>A侧地名观察</span>
+        <span>参考线与资料核查</span>
+        <span>B侧地名对照</span>
+      </aside>
+    </header>
+
+    <section class="panel lead-panel">
+      <div>
+        <h2>路线规划原则</h2>
+        <p id="planningPrinciple">正在读取路线规划数据...</p>
+      </div>
+      <div id="evidenceChips" class="chips"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <h2>路线可视化地图</h2>
+        <p>红线表示观察顺序，金线表示选用窗口，蓝/橙点表示两侧20km观察格网。连线不表示可通行道路，窗口也不是已检验的连续分异段。</p>
+      </div>
+      <div class="map-layout">
+        <div id="map"></div>
+        <aside id="stopPanel" class="stop-panel"></aside>
+      </div>
+      <div id="legend" class="legend"></div>
+    </section>
+
+    <section class="route-grid">
+      <article class="panel">
+        <div class="section-title">
+          <h2>独立研学路线可视化</h2>
+          <p>每条路线保留范围示意、小地图、两侧社区与特征字、文化资料线索和研学项目设计。</p>
+        </div>
+        <div id="routeSections" class="route-sections"></div>
+      </article>
+
+      <article class="panel">
+        <div class="section-title">
+          <h2>外部文化资料如何服务路线</h2>
+          <p>文化资料用于提出和核查历史解释，地名组成数值以当前冻结成果为准。</p>
+        </div>
+        <div id="sourceCards" class="source-cards"></div>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <h2>地名文化社区解释矩阵</h2>
+        <p>按观察窗口列出两侧社区质量比例、实际字词命中率与语义核查状态，服务研学讲解。</p>
+      </div>
+      <div id="communityMatrix" class="community-matrix"></div>
+    </section>
+
+    <section class="panel">
+      <div class="section-title">
+        <h2>最终研学讲解稿</h2>
+        <p>按“观察—提问—查证—对照”组织讲解，数值、资料与待核实解释分别呈现。</p>
+      </div>
+      <div id="scriptBox" class="script-box"></div>
+    </section>
+  </main>
+
+  <script src="./static/vendor/leaflet/leaflet.js"></script>
+  <script src="./static/js/main.js?v=20261028"></script>
+</body>
+</html>
